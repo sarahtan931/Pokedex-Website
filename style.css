@@ -1,0 +1,32 @@
+li.gallery {
+    list-style-type: none;
+    margin: 10px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+
+  }
+  
+  li.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  li.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  ul.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+  div.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:50px;
+    background: aqua;
+    text-align: center
+}
