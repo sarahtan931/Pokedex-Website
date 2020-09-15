@@ -7,6 +7,7 @@
 <meta name="author" content="">
 <link href="style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="app.js"></script>
 </head>
 <body>
 
@@ -14,16 +15,19 @@
     <h1>Pokedex</h1>
 </div>
 
-<form class="example" action="action_page.php">
-    <input type="text" placeholder="Search by name" name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
+<form name="numForm" class="example" action="" onsubmit="return checkNum()" method="post">
+    <input type="number" placeholder="Search by number" name="fNum">
+    <button type="submit">
+        <i class="fa fa-search"></i>
+    </button>
   </form>
 
-  <form class="example" action="action_page.php">
-    <input type="text" placeholder="Search by number" name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
+<form name="nameForm" class="example" action="" onsubmit="return checkName()" method="post">
+    <input type="text" placeholder="Search by name" name="fName">
+    <button type="submit" >
+        <i class="fa fa-search"></i>
+    </button>
   </form>
-
 
 <ul>
     <li class="gallery grass"><p>Bulbasaur</p>
@@ -294,8 +298,5 @@
 </div>
 
 </body>
-
-
-
-
 </html>
+
