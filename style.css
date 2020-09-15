@@ -1,9 +1,15 @@
+h1{
+    text-align: center;
+}
+
 li.gallery {
     list-style-type: none;
-    margin: 10px;
-    border: 1px solid #ccc;
+    margin: 14px;
+    border: 2px solid #ccc;
     float: left;
-    width: 180px;
+    width: 200px;
+    text-align: center
+
 
   }
   
@@ -18,15 +24,36 @@ li.gallery {
   
   ul.desc {
     padding: 15px;
-    text-align: center;
+    text-align: left;
   }
 
+  body{
+      position: relative;
+  }
   div.footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     height:50px;
-    background: aqua;
-    text-align: center
+    background: lightblue;
+    text-align: center;
+    margin: 0 auto;
 }
+
+/* Container for skill bars */
+.container {
+  width: 100%; /* Full width */
+  background-color: #ddd; /* Grey background */
+}
+
+.skills {
+  text-align: right; /* Right-align text */
+  color: black; /* White text color */
+}
+
+.rare1 {width: 10%; background-color: plum;}
+.rare3 {width: 30%; background-color: lightseagreen;}
+.rare4 {width: 40%; background-color: #4CAF50;} /* Green */
+.rare5 {width: 50%; background-color: yellow}
+.rare6 {width: 60%; background-color: lightsalmon;}
