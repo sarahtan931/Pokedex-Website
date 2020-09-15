@@ -2,16 +2,28 @@ h1{
     text-align: center;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+  }
+
 li.gallery {
     list-style-type: none;
-    margin: 14px;
+    margin: 5px;
+    margin-bottom: 20px;
     border: 2px solid #ccc;
     float: left;
-    width: 200px;
-    text-align: center
-
+    width: 210px;
+    text-align: center;
+    position: relative;
 
   }
+
+  .grass{background-color: rgb(148, 238, 171);}
+  .fire{background-color: rgb(255, 223, 164);}
+  .water{background-color: paleturquoise;}
+  .bug{background-color: lightyellow;}
+  .normal{background-color: lightpink;}
   
   li.gallery:hover {
     border: 1px solid #777;
@@ -20,6 +32,12 @@ li.gallery {
   li.gallery img {
     width: 100%;
     height: auto;
+    
+  }
+
+  p{
+      font-weight: bold;
+      font-size: 20px;
   }
   
   ul.desc {
@@ -28,17 +46,18 @@ li.gallery {
   }
 
   body{
-      position: relative;
+    margin-bottom: 60px;
+    background-image: url('Pokemon/pokemonb.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   div.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height:50px;
-    background: lightblue;
+    background-color:rgb(103, 189, 114);
+    position: absolute;
+    bottom: 10px;
     text-align: center;
-    margin: 0 auto;
+    width: 99%;
+    
 }
 
 /* Container for skill bars */
@@ -46,6 +65,7 @@ li.gallery {
   width: 100%; /* Full width */
   background-color: #ddd; /* Grey background */
 }
+
 
 .skills {
   text-align: right; /* Right-align text */
@@ -57,3 +77,68 @@ li.gallery {
 .rare4 {width: 40%; background-color: #4CAF50;} /* Green */
 .rare5 {width: 50%; background-color: yellow}
 .rare6 {width: 60%; background-color: lightsalmon;}
+
+.header {
+    padding: 15px;
+    text-align: center;
+    background: rgb(176, 218, 245);
+    color:black;
+    font-size: 20px;
+    font-family: Arial;
+   
+  }
+
+  .Search {
+    padding: 15px;
+    text-align: center;
+    background: rgb(176, 218, 245);
+    color:black;
+    font-size: 20px;
+    font-family: Arial;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+ 
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Bottom left text */
+.pokemonId {
+    text-align: right;
+    font-weight: bold;
+    font-style: italic;
+  }

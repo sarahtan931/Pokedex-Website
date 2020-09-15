@@ -6,13 +6,31 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<h1>Pokedex</h1>
+
+<div class="header">
+    <h1>Pokedex</h1>
+</div>
+
+<form class="example" action="action_page.php">
+    <input type="text" placeholder="Search by name" name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+  <form class="example" action="action_page.php">
+    <input type="text" placeholder="Search by number" name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+
 <ul>
-    <li class="gallery">Bulbasaur
+    <li class="gallery grass"><p>Bulbasaur</p>
+        
         <img src='Pokemon/Bulbasaur.png'>
-        <ul class=desc>
+        <div class="pokemonId">#001</div>
+        <ul class="desc grass">
             <li>
                 Rarity
                 <div class="container">
@@ -20,12 +38,14 @@
                 </div></li>
             <li>Type: Grass</li>
             <li>Fast Move: Tackle</li>
+            
 
         </ul>
     </li>
-    <li class="gallery">Ivysaur
+    <li class="gallery grass"><p>Ivysaur</p>
         <img src='Pokemon/Ivysaur.png'>
-        <ul class="desc">
+        <div class="pokemonId">#002</div>
+        <ul class="desc grass">
             <li> Rarity
                 <div class="container">
                 <div class="skills rare5">5</div>
@@ -34,9 +54,10 @@
             <li>Fast Move: Rasor Leaf</li>
         </ul>
     </li>
-    <li class="gallery">Venusaur
+    <li class="gallery grass"><p>Venusaur</p>
     <img src='Pokemon/Venusaur.png'>
-    <ul class="desc">
+    <div class="pokemonId">#003</div>
+    <ul class="desc grass">
         <li>Rarity
             <div class="container">
             <div class="skills rare6">6</div>
@@ -45,9 +66,10 @@
         <li>Fast Move: Rasor Leaf</li>
     </ul>
     </li>
-    <li class="gallery">Charmander
+    <li class="gallery fire"><p>Charmander</p>
     <img src='Pokemon/Charmander.png'>
-    <ul class="desc">
+    <div class="pokemonId">#004</div>
+    <ul class="desc fire">
         <li>Rarity
             <div class="container">
             <div class="skills rare4">4</div>
@@ -57,9 +79,10 @@
     </ul>
     </li>
 
-    <li class="gallery">Charmeleon
+    <li class="gallery fire"><p>Charmeleon</p>
         <img src='Pokemon/Charmeleon.png'>
-        <ul class="desc">
+        <div class="pokemonId">#005</div>
+        <ul class="desc fire">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare5">5</div>
@@ -69,9 +92,10 @@
     </ul>
     </li>
 
-    <li class="gallery">Charizard
+    <li class="gallery fire"><p>Charizard</p>
         <img src='Pokemon/Charizard.png'>
-        <ul class="desc">
+        <div class="pokemonId">#006</div>
+        <ul class="desc fire">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare6">6</div>
@@ -81,9 +105,10 @@
     </ul>
     </li>
 
-    <li class="gallery">Squirtle
+    <li class="gallery water"><p>Squirtle</p>
         <img src='Pokemon/Squirtle.png'>
-        <ul class="desc">
+        <div class="pokemonId">#007</div>
+        <ul class="desc water">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare4">4</div>
@@ -93,9 +118,10 @@
         </ul>
         </li>
 
-    <li class="gallery">Wartortle
+    <li class="gallery water"><p>Wartortle</p>
         <img src='Pokemon/Wartortle.png'>
-        <ul class="desc">
+        <div class="pokemonId">#008</div>
+        <ul class="desc water">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare5">5</div>
@@ -105,9 +131,10 @@
         </ul>
         </li>
 
-    <li class="gallery">Blastoise
+    <li class="gallery water"><p>Blastoise</p>
         <img src='Pokemon/Blastoise.png'>
-        <ul class="desc">
+        <div class="pokemonId">#009</div>
+        <ul class="desc water">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare6">6</div>
@@ -117,9 +144,10 @@
         </ul>
     </li>
     
-    <li class="gallery">Caterpie
+    <li class="gallery bug"><p>Caterpie</p>
         <img src='Pokemon/Caterpie.png'>
-        <ul class="desc">
+        <div class="pokemonId">#010</div>
+        <ul class="desc bug">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare1">1</div>
@@ -129,9 +157,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Metapod
+    <li class="gallery bug"><p>Metapod</p>
         <img src='Pokemon/Metapod.png'>
-        <ul class="desc">
+        <div class="pokemonId">#011</div>
+        <ul class="desc bug">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare3">3</div>
@@ -141,9 +170,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Butterfree
+    <li class="gallery bug"><p>Butterfree</p>
         <img src='Pokemon/Butterfree.png'>
-        <ul class="desc">
+        <div class="pokemonId">#012</div>
+        <ul class="desc bug">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare4">4</div>
@@ -153,9 +183,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Weedle
+    <li class="gallery bug"><p>Weedle</p>
         <img src='Pokemon/Weedle.png'>
-        <ul class="desc">
+        <div class="pokemonId">#013</div>
+        <ul class="desc bug">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare1">1</div>
@@ -165,9 +196,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Kakuna
+    <li class="gallery bug"><p>Kakuna</p>
         <img src='Pokemon/Kakuna.png'>
-        <ul class="desc">
+        <div class="pokemonId">#014</div>
+        <ul class="desc bug">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare3">3</div>
@@ -177,9 +209,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Beedrill
+    <li class="gallery bug"><p>Beedrill</p>
         <img src='Pokemon/Beedrill.png'>
-        <ul class="desc">
+        <div class="pokemonId">#015</div>
+        <ul class="desc bug">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare4">4</div>
@@ -189,9 +222,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Pidgey
+    <li class="gallery normal"><p>Pidgey</p>
         <img src='Pokemon/Pidgey.png'>
-        <ul class="desc">
+        <div class="pokemonId">#016</div>
+        <ul class="desc normal">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare1">1</div>
@@ -201,9 +235,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Pidgeotto
+    <li class="gallery normal"><p>Pidgeotto</p>
         <img src='Pokemon/Pidgeotto.png'>
-        <ul class="desc">
+        <div class="pokemonId">#017</div>
+        <ul class="desc normal">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare3">3</div>
@@ -213,9 +248,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Pidgeot
+    <li class="gallery normal"><p>Pidgeot</p>
         <img src='Pokemon/Pidgeotto.png'>
-        <ul class="desc">
+        <div class="pokemonId">#018</div>
+        <ul class="desc normal">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare4">4</div>
@@ -225,9 +261,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Rattata
+    <li class="gallery normal"><p>Rattata</p>
         <img src='Pokemon/Rattata.png'>
-        <ul class="desc">
+        <div class="pokemonId">#019</div>
+        <ul class="desc normal">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare1">1</div>
@@ -237,9 +274,10 @@
         </ul>
     </li>
 
-    <li class="gallery">Raticate
+    <li class="gallery normal"><p>Raticate</p>
         <img src='Pokemon/Raticate.png'>
-        <ul class="desc">
+        <div class="pokemonId">#020</div>
+        <ul class="desc normal">
             <li>Rarity
                 <div class="container">
                 <div class="skills rare4">4</div>
@@ -254,7 +292,10 @@
     <a href="https://docs.google.com/spreadsheets/d/1_kbqs0dw5VGJZmLPD7x4LFb-fCFaWdgkbAnhFXozm0E/edit#gid=812961418">Pokemon Stats Spreadsheet</a>
     <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset?">Pokemon Pictures</a>
 </div>
+
 </body>
+
+
 
 
 </html>
