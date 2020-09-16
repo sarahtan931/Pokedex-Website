@@ -7,7 +7,6 @@
 <meta name="author" content="">
 <link href="style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="app.js"></script>
 </head>
 <body>
 
@@ -17,17 +16,26 @@
 
 <form name="numForm" class="example" action="" onsubmit="return checkNum()" method="post">
     <input type="number" placeholder="Search by number" name="fNum">
-    <button type="submit">
-        <i class="fa fa-search"></i>
+    <button id="myBtn" type="submit">
+        <i>Search</i>
     </button>
   </form>
 
 <form name="nameForm" class="example" action="" onsubmit="return checkName()" method="post">
     <input type="text" placeholder="Search by name" name="fName">
-    <button type="submit" >
-        <i class="fa fa-search"></i>
+    <button id="myBtn" type="submit">
+        <i>Search</i>
     </button>
   </form>
+</div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+</div>
+
 
 <ul>
     <li class="gallery grass"><p>Bulbasaur</p>
@@ -299,4 +307,84 @@
 
 </body>
 </html>
+<script>   
+    
 
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+
+
+    
+function checkNum() {
+    var x = document.forms["numForm"]["fNum"].value;
+    if (x <= 0) {
+      alert("Please enter a valid number");
+      return false;
+    }
+    if (x > 20) {
+        alert("Please enter a valid number");
+        return false;
+      }
+      else{
+      
+
+      }
+  }
+
+function checkName() {
+    var x = document.forms["nameForm"]["fName"].value;
+    x = x.toLowerCase()
+    
+    if (x.length == 0) {
+      alert("Please enter a Name");
+      return false;
+    }
+    if(x.length > 20){
+        alert("Please enter less than 20 characters")
+        return false;
+    }
+    var letters = /^([A-Za-z]*)$/;
+    if (x.search(letters)){
+      alert("Please enter only A-Z or a-z characters");
+      return false
+    } 
+
+    else{
+        for(let i = 0; i < pokemon.length; i++){
+      if (pokemon[i].name.includes(x)){
+          pokemonNames.append(pokemon[i]);
+      }}  
+    } 
+  }
+
+pokemon = [
+{name: 'bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle'},
+{name: 'Iveysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf'},
+{name: 'Venusaur', id: 3, description:'Rarity: 6, Type: Grass, Fast Move: Rasor Leaf'},
+{name: 'Charmander', id: 4, description: 'Rarity: 4, Type: Fire, Fast Move: Ember'},
+{name: 'Charmeleon', id: 5, description: 'Rarity: 5, Type: Fire, Fast Move: Ember'},
+{name: 'Charizard', id: 6, description:'Rarity: 6, Type: Fire, Fast Move: Fire Spin'},
+{name: 'Squirtle', id: 7, description: 'Rarity: 4, Type: Water, Fast Move: Tackle'},
+{name: 'Wartortle', id: 8, description:'Rarity: 4, Type: Water, Fast Move: Bite'},
+{name: 'Blastoise', id: 9, description:'Rarity: 6, Type: Water, Fast Move: Bite'},
+{name: 'Caterpie', id: 10, description: 'Rarity: 1, Type: Bug, Fast Move: Tackles'},
+{name:'Metapod', id: 11, description: 'Rarity: 3, Type: Bug, Fast Move: Tackles'},
+{name:'Buterfree', id: 12, description:'Rarity: 4, Type: Bug, Fast Move: Struggle Bug'},
+{name:'Weedle', id:13, description:'Rarity: 1, Type: Bug, Fast Move: Bug bite'},
+{name: 'Kakuna', id:14, description: 'Rarity: 3, Type: Bug, Fast Move: Bug Bite'},
+{name: 'Beedrill', id:15, description: 'Rarity: 4, Type: Bug, Fast Move: Infestation'}, 
+{name: 'Pidgey', id: 16, description: 'Rarity: 1, Type: Normal, Fast Move: Tackles'},
+{name: 'Pidgeotto', id:17, description: 'Rarity: 3, Type: Normal, Fast Move: Wing Attack'},
+{name: 'Pidgeot', id: 18, description: 'Rarity: 4, Type: Normal, Fast Move: Air Slash'},
+{name:'Rattata', id: 19, description: 'Rarity: 1, Type: Normal, Fast Move: Tackle'},
+{name: 'Raticate', id: 20, description: 'Rarity: 4, Type Normal, Fast Move: Bite'}
+
+
+
+]
+
+
+
+
+</script>
