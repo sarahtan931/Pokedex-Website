@@ -6,7 +6,6 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link href="style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -14,9 +13,8 @@
     <h1>Pokedex</h1>
 </div>
 
-<button id="myBtn">Open Modal</button>
-
-<form name="numForm" class="example" action="" onsubmit="return checkNum()" method="post">
+<!--Search by number form-->
+<form name="numForm" class="search" action="" onsubmit="return checkNum()" method="post">
     <input type="number" placeholder="Search by number" name="fNum">
     <button id="btnNum" type="submit" >
         <i>Search</i>
@@ -24,8 +22,8 @@
   </form>
 
 
-
-<form name="nameForm" class="example" action="" onsubmit="return checkName()" method="post">
+<!--Search by name form-->
+<form name="nameForm" class="search" action="" onsubmit="return checkName()" method="post">
     <input type="text" placeholder="Search by name" name="fName">
     <button id="btnText" type="submit">
         <i>Search</i>
@@ -33,24 +31,24 @@
   </form>
 </div>
 
+<!-- Modal content -->
 <div id="popUp" class="modal">
-    <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
         <span class="close">&times;</span>
-        <h2>Pokemon</h2>
+        <h2>Pokemon Results</h2>
       </div>
       <div class="log">
       </div>
       <div class="modal-footer">
-        <h3>Modal Footer</h3>
+        <h3></h3>
       </div>
     </div>
   </div>
 
-<ul>
+<!--Unordered list of pokemon-->
+<ul class="ul">
     <li class="gallery grass"><p>Bulbasaur</p>
-        
         <img src='Pokemon/Bulbasaur.png'>
         <div class="pokemonId">#001</div>
         <ul class="desc grass">
@@ -314,49 +312,84 @@
 <div class="footer">
     <a href="https://docs.google.com/spreadsheets/d/1_kbqs0dw5VGJZmLPD7x4LFb-fCFaWdgkbAnhFXozm0E/edit#gid=812961418">Pokemon Stats Spreadsheet</a>
     <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset?">Pokemon Pictures</a>
-</div>
+</div>   
+</body>
+</html>
 
-<script>
-    var modal = document.getElementById("popUp");
-    var btn = document.getElementById("btnNum");
-    var btn1 = document.getElementById("btnText")
-    var span = document.getElementsByClassName("close")[0];
+<script>  
+
+//Array of pokemon objects
+pokemon = [
+{name: 'Bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle'},
+{name: 'Iveysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf'},
+{name: 'Venusaur', id: 3, description:'Rarity: 6, Type: Grass, Fast Move: Rasor Leaf'},
+{name: 'Charmander', id: 4, description: 'Rarity: 4, Type: Fire, Fast Move: Ember'},
+{name: 'Charmeleon', id: 5, description: 'Rarity: 5, Type: Fire, Fast Move: Ember'},
+{name: 'Charizard', id: 6, description:'Rarity: 6, Type: Fire, Fast Move: Fire Spin'},
+{name: 'Squirtle', id: 7, description: 'Rarity: 4, Type: Water, Fast Move: Tackle'},
+{name: 'Wartortle', id: 8, description:'Rarity: 4, Type: Water, Fast Move: Bite'},
+{name: 'Blastoise', id: 9, description:'Rarity: 6, Type: Water, Fast Move: Bite'},
+{name: 'Caterpie', id: 10, description: 'Rarity: 1, Type: Bug, Fast Move: Tackles'},
+{name:'Metapod', id: 11, description: 'Rarity: 3, Type: Bug, Fast Move: Tackles'},
+{name:'Buterfree', id: 12, description:'Rarity: 4, Type: Bug, Fast Move: Struggle Bug'},
+{name:'Weedle', id:13, description:'Rarity: 1, Type: Bug, Fast Move: Bug bite'},
+{name: 'Kakuna', id:14, description: 'Rarity: 3, Type: Bug, Fast Move: Bug Bite'},
+{name: 'Beedrill', id:15, description: 'Rarity: 4, Type: Bug, Fast Move: Infestation'}, 
+{name: 'Pidgey', id: 16, description: 'Rarity: 1, Type: Normal, Fast Move: Tackles'},
+{name: 'Pidgeotto', id:17, description: 'Rarity: 3, Type: Normal, Fast Move: Wing Attack'},
+{name: 'Pidgeot', id: 18, description: 'Rarity: 4, Type: Normal, Fast Move: Air Slash'},
+{name:'Rattata', id: 19, description: 'Rarity: 1, Type: Normal, Fast Move: Tackle'},
+{name: 'Raticate', id: 20, description: 'Rarity: 4, Type Normal, Fast Move: Bite'}]
+
+// Declare variables
+var modal = document.getElementById("popUp");
+var btnNum = document.getElementById("btnNum");
+var btnText = document.getElementById("btnText")
+var span = document.getElementsByClassName("close")[0];
     
-
-    span.onclick = function() {
-        modal.style.display = "none";
-        document.querySelector(".log").innerHTML = "";
+//function to close modal
+span.onclick = function() {
+    modal.style.display = "none";
+    document.querySelector(".log").innerHTML = "";
 }
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
     if (event.target == modal) {
          modal.style.display = "none";
          document.querySelector(".log").innerHTML = ""
   }
 }
 
-    btn.onclick= function(){
-        modal.style.display = "block";
-    }
+//function to open modal
+btnNum.onclick= function(){
+    modal.style.display = "block";
+}
 
-    btn1.onclick= function(){
-        modal.style.display = "block";
-    }
-   
+//function to open modal
+btnText.onclick= function(){
+    modal.style.display = "block";
+}
 
-</script>
-    
-</body>
-</html>
-<script>   
+//function to tell user there is no match
+function noMatch(){
+    document.querySelector(".log").innerHTML = "Sorry no matches!" ;
+}
 
+//function to show matches on the modal
+function show(pokemon) {
+  var msg = "Name: " + pokemon.name + " ID: " + pokemon.id + " " + pokemon.description;
+  document.querySelector(".log").innerHTML += msg + "<br>" ;
+}
 
+//function to search according to number 
 function checkNum() {
-
+    let counter = 0;
     let pokemonNum = [];
+    //getting user input
     var x = document.forms["numForm"]["fNum"].value;
   
+     //validating the users input
     if (x <= 0) {
       alert("Please enter a valid number");
       return true;
@@ -364,81 +397,73 @@ function checkNum() {
     if (x > 20) {
         alert("Please enter a valid number");
         return true;
-      }
-      else{
-        
+    }
+    //if the users input is valid 
+    else{
+        //going through the pokemon array
         for(let i = 0; i < pokemon.length; i++){
-             if (pokemon[i].id.toString().includes(x.toString())){
-                //alert(pokemon[i].name + " " + pokemon[i].id + " " + pokemon[i].description)
-                //console.log(pokemon[i].name + " " + pokemon[i].id + " " + pokemon[i].description)
+            //checking if the users input matches any of the pokemon id
+            if (pokemon[i].id.toString().includes(x.toString())){
                 pokemonNum.push(pokemon[i]);
-                show(pokemon[i])
-                
-            }
+
+                 //calling function to show matches
+                 //up to 5
+                if (counter<5){
+                    show(pokemon[i])
+                    counter++;
+                }   
+            } 
         } 
+        //if there are no matches calling function to print no match
+        if (counter === 0){
+            noMatch()
+        }
         return false;
     }
 }
 
-function show(pokemon) {
-  var msg = "Name: " + pokemon.name + " ID: " + pokemon.id + " " + pokemon.description;
-  document.querySelector(".log").innerHTML += msg + "<br>" ;
-}
-
-
+//function to search according to name
 function checkName() {
     let pokemonNames = [];
-
+    let counter = 0;
+    //getting users input and turning it to lower case
     var x = document.forms["nameForm"]["fName"].value;
-    x = x.toLowerCase()
+    x = x.toLowerCase();
     
+    //validating input
     if (x.length == 0) {
       alert("Please enter a Name");
-      return true;
+      noMatch();
     }
     if(x.length > 20){
         alert("Please enter less than 20 characters")
-        return true;
+        noMatch();
     }
     var letters = /^([A-Za-z]*)$/;
     if (x.search(letters)){
       alert("Please enter only A-Z or a-z characters");
       return true;
     } 
-
+    //if the input is valid
     else{
-    for(let i = 0; i < pokemon.length; i++){
-      if (pokemon[i].name.includes(x)){
-        //alert(pokemon[i].name + " " + pokemon[i].id + " " + pokemon[i].description)
-        pokemonNames.push(pokemon[i]);
-        show(pokemon[i]);
-      }
-    } 
-    return false;
-} 
-   
-}
+    //go through all pokemon and check for matches
+        for(let i = 0; i < pokemon.length; i++){
+            if (pokemon[i].name.toLowerCase().includes(x)){
+            pokemonNames.push(pokemon[i]);
 
-pokemon = [
-{name: 'bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle'},
-{name: 'iveysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf'},
-{name: 'venusaur', id: 3, description:'Rarity: 6, Type: Grass, Fast Move: Rasor Leaf'},
-{name: 'charmander', id: 4, description: 'Rarity: 4, Type: Fire, Fast Move: Ember'},
-{name: 'charmeleon', id: 5, description: 'Rarity: 5, Type: Fire, Fast Move: Ember'},
-{name: 'charizard', id: 6, description:'Rarity: 6, Type: Fire, Fast Move: Fire Spin'},
-{name: 'squirtle', id: 7, description: 'Rarity: 4, Type: Water, Fast Move: Tackle'},
-{name: 'wartortle', id: 8, description:'Rarity: 4, Type: Water, Fast Move: Bite'},
-{name: 'blastoise', id: 9, description:'Rarity: 6, Type: Water, Fast Move: Bite'},
-{name: 'caterpie', id: 10, description: 'Rarity: 1, Type: Bug, Fast Move: Tackles'},
-{name:'metapod', id: 11, description: 'Rarity: 3, Type: Bug, Fast Move: Tackles'},
-{name:'buterfree', id: 12, description:'Rarity: 4, Type: Bug, Fast Move: Struggle Bug'},
-{name:'weedle', id:13, description:'Rarity: 1, Type: Bug, Fast Move: Bug bite'},
-{name: 'kakuna', id:14, description: 'Rarity: 3, Type: Bug, Fast Move: Bug Bite'},
-{name: 'beedrill', id:15, description: 'Rarity: 4, Type: Bug, Fast Move: Infestation'}, 
-{name: 'pidgey', id: 16, description: 'Rarity: 1, Type: Normal, Fast Move: Tackles'},
-{name: 'pidgeotto', id:17, description: 'Rarity: 3, Type: Normal, Fast Move: Wing Attack'},
-{name: 'pidgeot', id: 18, description: 'Rarity: 4, Type: Normal, Fast Move: Air Slash'},
-{name:'rattata', id: 19, description: 'Rarity: 1, Type: Normal, Fast Move: Tackle'},
-{name: 'raticate', id: 20, description: 'Rarity: 4, Type Normal, Fast Move: Bite'}]
+            //calling function to show matches up to 5
+            if (counter<5){
+                show(pokemon[i])
+                counter++;
+            }
+            }
+        } 
+        //if there is no match calling function to print out no match to the user
+        if (counter === 0){
+            noMatch()
+        }
+    return false;
+}   
+}
 
 </script>
