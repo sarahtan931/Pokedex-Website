@@ -14,30 +14,39 @@
     <h1>Pokedex</h1>
 </div>
 
+<button id="myBtn">Open Modal</button>
+
 <form name="numForm" class="example" action="" onsubmit="return checkNum()" method="post">
     <input type="number" placeholder="Search by number" name="fNum">
-    <button id="myBtn" type="submit">
+    <button id="btnNum" type="submit" >
         <i>Search</i>
     </button>
   </form>
+
+
 
 <form name="nameForm" class="example" action="" onsubmit="return checkName()" method="post">
     <input type="text" placeholder="Search by name" name="fName">
-    <button id="myBtn" type="submit">
+    <button id="btnText" type="submit">
         <i>Search</i>
     </button>
   </form>
 </div>
 
-<p><span id="demo"></span></p>
-
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+<div id="popUp" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Pokemon</h2>
+      </div>
+      <div class="log">
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
   </div>
-</div>
-
 
 <ul>
     <li class="gallery grass"><p>Bulbasaur</p>
@@ -307,36 +316,75 @@
     <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset?">Pokemon Pictures</a>
 </div>
 
+<script>
+    var modal = document.getElementById("popUp");
+    var btn = document.getElementById("btnNum");
+    var btn1 = document.getElementById("btnText")
+    var span = document.getElementsByClassName("close")[0];
+    
+
+    span.onclick = function() {
+        modal.style.display = "none";
+        document.querySelector(".log").innerHTML = "";
+}
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+         modal.style.display = "none";
+         document.querySelector(".log").innerHTML = ""
+  }
+}
+
+    btn.onclick= function(){
+        modal.style.display = "block";
+    }
+
+    btn1.onclick= function(){
+        modal.style.display = "block";
+    }
+   
+
+</script>
+    
 </body>
 </html>
 <script>   
 
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-    
+
 function checkNum() {
+
     let pokemonNum = [];
     var x = document.forms["numForm"]["fNum"].value;
+  
     if (x <= 0) {
       alert("Please enter a valid number");
-      return false;
+      return true;
     }
     if (x > 20) {
         alert("Please enter a valid number");
-        return false;
+        return true;
       }
       else{
+        
         for(let i = 0; i < pokemon.length; i++){
              if (pokemon[i].id.toString().includes(x.toString())){
-                alert(pokemon[i].id)
+                //alert(pokemon[i].name + " " + pokemon[i].id + " " + pokemon[i].description)
+                //console.log(pokemon[i].name + " " + pokemon[i].id + " " + pokemon[i].description)
                 pokemonNum.push(pokemon[i]);
+                show(pokemon[i])
+                
             }
         } 
+        return false;
     }
 }
 
-  
+function show(pokemon) {
+  var msg = "Name: " + pokemon.name + " ID: " + pokemon.id + " " + pokemon.description;
+  document.querySelector(".log").innerHTML += msg + "<br>" ;
+}
+
 
 function checkName() {
     let pokemonNames = [];
@@ -346,28 +394,30 @@ function checkName() {
     
     if (x.length == 0) {
       alert("Please enter a Name");
-      return false;
+      return true;
     }
     if(x.length > 20){
         alert("Please enter less than 20 characters")
-        return false;
+        return true;
     }
     var letters = /^([A-Za-z]*)$/;
     if (x.search(letters)){
       alert("Please enter only A-Z or a-z characters");
-      return false
+      return true;
     } 
 
     else{
     for(let i = 0; i < pokemon.length; i++){
       if (pokemon[i].name.includes(x)){
-        alert(pokemon[i].name + " " + pokemon[i].id + " " + pokemon[i].description)
+        //alert(pokemon[i].name + " " + pokemon[i].id + " " + pokemon[i].description)
         pokemonNames.push(pokemon[i]);
+        show(pokemon[i]);
       }
     } 
-    } 
+    return false;
+} 
    
-  }
+}
 
 pokemon = [
 {name: 'bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle'},
