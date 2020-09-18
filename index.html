@@ -434,10 +434,12 @@ function checkName() {
     if (x.length == 0) {
       alert("Please enter a Name");
       noMatch();
+      return true;
     }
     if(x.length > 20){
         alert("Please enter less than 20 characters")
         noMatch();
+        return true;
     }
     var letters = /^([A-Za-z]*)$/;
     if (x.search(letters)){
