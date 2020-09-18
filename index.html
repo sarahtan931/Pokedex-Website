@@ -376,6 +376,9 @@ function noMatch(){
     document.querySelector(".log").innerHTML = "Sorry no matches!" ;
 }
 
+function inputInvalid(){
+    document.querySelector(".log").innerHTML = "Please enter a valid input ";
+}
 
 
 //function to show matches on the modal
@@ -393,13 +396,11 @@ function checkNum() {
   
      //validating the users input
     if (x <= 0) {
-      alert("Please enter a valid number");
-      noMatch()
+      inputInvalid();
       return false;
     }
     if (x > 20) {
-        alert("Please enter a valid number");
-        noMatch()
+        inputInvalid();
         return false;
     }
     //if the users input is valid 
@@ -435,19 +436,16 @@ function checkName() {
     
     //validating input
     if (x.length == 0) {
-      alert("Please enter a Name");
-      noMatch();
+      inputInvalid();
       return false;
     }
     if(x.length > 20){
-        alert("Please enter less than 20 characters")
-        noMatch();
+        inputInvalid();
         return false;
     }
     var letters = /^([A-Za-z]*)$/;
     if (x.search(letters)){
-      alert("Please enter only A-Z or a-z characters");
-      noMatch()
+      inputInvalid();
       return false;
     } 
     //if the input is valid
