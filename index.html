@@ -376,6 +376,8 @@ function noMatch(){
     document.querySelector(".log").innerHTML = "Sorry no matches!" ;
 }
 
+
+
 //function to show matches on the modal
 function show(pokemon) {
   var msg = "Name: " + pokemon.name + " ID: " + pokemon.id + " " + pokemon.description;
@@ -385,18 +387,20 @@ function show(pokemon) {
 //function to search according to number 
 function checkNum() {
     let counter = 0;
-    let pokemonNum = [];
+    
     //getting user input
     var x = document.forms["numForm"]["fNum"].value;
   
      //validating the users input
     if (x <= 0) {
       alert("Please enter a valid number");
-      return true;
+      noMatch()
+      return false;
     }
     if (x > 20) {
         alert("Please enter a valid number");
-        return true;
+        noMatch()
+        return false;
     }
     //if the users input is valid 
     else{
@@ -404,7 +408,6 @@ function checkNum() {
         for(let i = 0; i < pokemon.length; i++){
             //checking if the users input matches any of the pokemon id
             if (pokemon[i].id.toString().includes(x.toString())){
-                pokemonNum.push(pokemon[i]);
 
                  //calling function to show matches
                  //up to 5
@@ -424,7 +427,7 @@ function checkNum() {
 
 //function to search according to name
 function checkName() {
-    let pokemonNames = [];
+   
     let counter = 0;
     //getting users input and turning it to lower case
     var x = document.forms["nameForm"]["fName"].value;
@@ -434,25 +437,24 @@ function checkName() {
     if (x.length == 0) {
       alert("Please enter a Name");
       noMatch();
-      return true;
+      return false;
     }
     if(x.length > 20){
         alert("Please enter less than 20 characters")
         noMatch();
-        return true;
+        return false;
     }
     var letters = /^([A-Za-z]*)$/;
     if (x.search(letters)){
       alert("Please enter only A-Z or a-z characters");
-      return true;
+      noMatch()
+      return false;
     } 
     //if the input is valid
     else{
     //go through all pokemon and check for matches
         for(let i = 0; i < pokemon.length; i++){
             if (pokemon[i].name.toLowerCase().includes(x)){
-            pokemonNames.push(pokemon[i]);
-
             //calling function to show matches up to 5
             if (counter<5){
                 show(pokemon[i])
