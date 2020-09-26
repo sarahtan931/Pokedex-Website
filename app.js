@@ -1,48 +1,77 @@
-//Array of pokemon objects
 //creating search box
 var div = document.createElement("div");
-var node = document.createTextNode("More pokemeon");
-div.appendChild(node)
 document.getElementById("searchBox").appendChild(div);
 
-//creating list of pokemon
+//creating an unordered list of pokemon
 var ul = document.createElement("ul");
 ul.setAttribute('id', 'myUL');
 
+
 //creating list element 
 var li1 = document.createElement('li');
+var ul1 = document.createElement("ul")
 li1.setAttribute('class', 'gallery1');
 li1.setAttribute('id', 'li');
-//creating image 
-var image1 = document.createElement('img');
-image1.src  = 'Pokemon/Bulbasaur.png';
-image1.setAttribute('class', 'img1')
-//adding text 
-var listText1 = document.createTextNode("Bulbasaur, ID: 1");
-//adding all the elements to the inordered list
-li1.appendChild(image1);
-li1.appendChild(listText1);
+var image = document.createElement('img');
+image.src  = 'Pokemon/Bulbasaur.png';
+image.setAttribute('class', 'img1');
+var p = document.createElement("P");
+var allStats = document.createElement('div')
+var pokemon = document.createTextNode("Bulbasaur");
+var listText = document.createTextNode("ID: 001");
+//Type: Grass, Rarity: Four, Fast Move: Tackle
+var stats = document.createTextNode("Bulbasaur is grass type with a rarity of four and its fast move is tackle");
+var breakup = document.createElement('br')
+p.append(pokemon)
+li1.appendChild(image);
+li1.append(p);
+li1.appendChild(listText);
+li1.appendChild(breakup);
+li1.append(stats);
 ul.appendChild(li1);
 
 var li2 = document.createElement('li');
 li2.setAttribute('class', 'gallery1')
-var image2 = document.createElement('img');
-image2.src  = 'Pokemon/Ivysaur.png';
-image2.setAttribute('class', 'img1')
-var listText2 = document.createTextNode("Ivysaur, ID: 2");
-li2.appendChild(image2)
-li2.appendChild(listText2)
+var image = document.createElement('img');
+image.src  = 'Pokemon/Ivysaur.png';
+image.setAttribute('class', 'img1')
+var listText = document.createTextNode("ID: 2");
+var p = document.createElement("P");
+var pokemon = document.createTextNode("Ivysaur");
+p.append(pokemon)
+li2.appendChild(image)
+li2.append(p)
+li2.appendChild(listText)
 ul.appendChild(li2)
 
 var li3 = document.createElement('li');
 li3.setAttribute('class', 'gallery1')
-var image3 = document.createElement('img');
-image3.src  = 'Pokemon/Venusaur.png';
-image3.setAttribute('class', 'img1')
-var listText3 = document.createTextNode("Venusaur, ID: 3");
-li3.appendChild(image3)
-li3.appendChild(listText3)
+var image = document.createElement('img');
+image.src = 'Pokemon/Venusaur.png';
+image.setAttribute('class', 'img1')
+var listText = document.createTextNode("ID: 3");
+var p = document.createElement("P");
+var pokemon = document.createTextNode("Venusaur");
+p.append(pokemon)
+li3.appendChild(image)
+li3.append(p)
+li3.appendChild(listText)
 ul.appendChild(li3)
+
+
+var li4 = document.createElement('li');
+li4.setAttribute('class', 'gallery1')
+var image = document.createElement('img');
+image.src  = 'Pokemon/Charmander.png';
+image.setAttribute('class', 'img1');
+var p = document.createElement("P");
+var pokemon = document.createTextNode("Charmander");
+var listText = document.createTextNode("ID: 4");
+p.appendChild(pokemon)
+li4.appendChild(image)
+li4.append(p)
+li4.appendChild(listText)
+ul.appendChild(li4)
 
 div.appendChild(ul)
 
@@ -68,6 +97,7 @@ pokemon = [
     {name:'Rattata', id: 19, description: 'Rarity: 1, Type: Normal, Fast Move: Tackle'},
     {name: 'Raticate', id: 20, description: 'Rarity: 4, Type Normal, Fast Move: Bite'}]
     
+
     function filter() {
         // Declare variables
         let input, filter, ul, li, txtValue;
@@ -75,12 +105,16 @@ pokemon = [
         filter = input.value.toUpperCase();
         ul = document.getElementById("myUL");
         li = ul.getElementsByTagName('li');
-
+       
         // Loop through all list items, and hide those who don't match the search query
         for (i = 0; i < li.length; i++) {
-          a = li[i];
+            a = li[i].getElementsByTagName("P")[0];
+            
           txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        if (filter === ""){
+            li[i].style.display = "none";
+        }
+         else if (txtValue.toUpperCase().includes(filter)) {
             li[i].style.display = "block";
           } 
           else {
@@ -102,8 +136,11 @@ pokemon = [
         // Loop through all list items, and hide those who don't match the search query
         for (i = 0; i < li.length; i++) {
           a = li[i];
+         
           txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          //txtValue.toUpperCase().indexOf(filter) > 0
+        
+        if (txtValue.toUpperCase().indexOf(filter) > 0) {
             li[i].style.display = "block";
           } 
           else {
@@ -114,21 +151,16 @@ pokemon = [
       }
 
    
-    
     //function to search according to number 
     function checkNum() {
         let text = "";
         let counter = 0;
-        
         //getting user input
         var x = document.forms["numForm"]["fNum"].value;
-        
          //validating the users input
         if (x <= 0 || x>20) {
-            alert("input invalid");
-          
+            alert("input invalid");  
         }
-       
         //if the users input is valid 
         else{
             //going through the pokemon array
@@ -141,8 +173,7 @@ pokemon = [
                         text += "Name: " + pokemon[i].name + " ID: " + pokemon[i].id + " " + pokemon[i].description + "\n";
                         counter++;
                     }   
-                } 
-                
+                }    
             } 
             //printing the matching pokemon
             alert(text)
