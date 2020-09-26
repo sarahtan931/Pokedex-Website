@@ -14,7 +14,7 @@
 </div>
 
 <!--Search by number form-->
-<form name="numForm" class="search" action="" onsubmit="return checkNum()">
+<form name="numForm" class="search" action="" onsubmit="return checkNum()" onkeyup="filterNum()">
     <input type="number" placeholder="Search by number" name="fNum">
     <button id="btnNum" type="submit" >
         <i>Search</i>
@@ -23,8 +23,8 @@
 
 
 <!--Search by name form-->
-<form name="nameForm" class="search" action="" onsubmit="return checkName()">
-    <input type="text" placeholder="Search by name" name="fName">
+<form name="nameForm" class="search" action="" onsubmit="return checkName()" id="searchBox" onkeyup="filter()" >
+    <input type="text" placeholder="Search by name" name="fName" id="nameInput">
     <button id="btnText" type="submit">
         <i>Search</i>
     </button>
@@ -32,7 +32,7 @@
 </div>
 
 <!--Unordered list of pokemon-->
-<ul class="ul">
+<ul class="ul" id="pokemonList">
     <li class="gallery grass"><p>Bulbasaur</p>
         <img src='Pokemon/Bulbasaur.png'>
         <div class="pokemonId">#001</div>

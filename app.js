@@ -1,4 +1,51 @@
 //Array of pokemon objects
+//creating search box
+var div = document.createElement("div");
+var node = document.createTextNode("More pokemeon");
+div.appendChild(node)
+document.getElementById("searchBox").appendChild(div);
+
+//creating list of pokemon
+var ul = document.createElement("ul");
+ul.setAttribute('id', 'myUL');
+
+//creating list element 
+var li1 = document.createElement('li');
+li1.setAttribute('class', 'gallery1');
+li1.setAttribute('id', 'li');
+//creating image 
+var image1 = document.createElement('img');
+image1.src  = 'Pokemon/Bulbasaur.png';
+image1.setAttribute('class', 'img1')
+//adding text 
+var listText1 = document.createTextNode("Bulbasaur, ID: 1");
+//adding all the elements to the inordered list
+li1.appendChild(image1);
+li1.appendChild(listText1);
+ul.appendChild(li1);
+
+var li2 = document.createElement('li');
+li2.setAttribute('class', 'gallery1')
+var image2 = document.createElement('img');
+image2.src  = 'Pokemon/Ivysaur.png';
+image2.setAttribute('class', 'img1')
+var listText2 = document.createTextNode("Ivysaur, ID: 2");
+li2.appendChild(image2)
+li2.appendChild(listText2)
+ul.appendChild(li2)
+
+var li3 = document.createElement('li');
+li3.setAttribute('class', 'gallery1')
+var image3 = document.createElement('img');
+image3.src  = 'Pokemon/Venusaur.png';
+image3.setAttribute('class', 'img1')
+var listText3 = document.createTextNode("Venusaur, ID: 3");
+li3.appendChild(image3)
+li3.appendChild(listText3)
+ul.appendChild(li3)
+
+div.appendChild(ul)
+
 pokemon = [
     {name: 'Bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle'},
     {name: 'Iveysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf'},
@@ -21,6 +68,52 @@ pokemon = [
     {name:'Rattata', id: 19, description: 'Rarity: 1, Type: Normal, Fast Move: Tackle'},
     {name: 'Raticate', id: 20, description: 'Rarity: 4, Type Normal, Fast Move: Bite'}]
     
+    function filter() {
+        // Declare variables
+        let input, filter, ul, li, txtValue;
+        input = document.forms["nameForm"]["fName"];
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+          a = li[i];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "block";
+          } 
+          else {
+            console.log('not showing')
+            li[i].style.display = "none";
+          }
+        }
+      }
+
+       
+    function filterNum() {
+        // Declare variables
+        let input, filter, ul, li, txtValue;
+        input = document.forms["numForm"]["fNum"];
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+          a = li[i];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "block";
+          } 
+          else {
+            console.log('not showing')
+            li[i].style.display = "none";
+          }
+        }
+      }
+
+   
     
     //function to search according to number 
     function checkNum() {
