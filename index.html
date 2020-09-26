@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>Pokedex</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <link href="style.css" rel="stylesheet" type="text/css">
@@ -14,7 +14,7 @@
 </div>
 
 <!--Search by number form-->
-<form name="numForm" class="search" action="" onsubmit="return checkNum()" onkeyup="filterNum()">
+<form name="numForm" class="search" onsubmit="return checkNum()" onkeyup="filterNum()">
     <input type="number" placeholder="Search by number" name="fNum">
     <button id="btnNum" type="submit" >
         <i>Search</i>
@@ -23,20 +23,20 @@
 
 
 <!--Search by name form-->
-<form name="nameForm" class="search" action="" onsubmit="return checkName()" id="searchBox" onkeyup="filter()" >
+<form name="nameForm" class="search" onsubmit="return checkName()" id="searchBox" onkeyup="filter()" >
     <input type="text" placeholder="Search by name" name="fName" id="nameInput">
     <button id="btnText" type="submit">
         <i>Search</i>
     </button>
   </form>
-</div>
+
 
 
 
 <!--Unordered list of pokemon-->
 <ul class="ul" id="pokemonList">
     <li class="gallery grass"><p>Bulbasaur</p>
-        <img src='Pokemon/Bulbasaur.png'>
+        <img src='Pokemon/Bulbasaur.png' alt="">
         <div class="pokemonId">#001</div>
         <ul class="desc grass">
             <li>
@@ -51,7 +51,7 @@
         </ul>
     </li>
     <li class="gallery grass"><p>Ivysaur</p>
-        <img src='Pokemon/Ivysaur.png'>
+        <img src='Pokemon/Ivysaur.png' alt="">
         <div class="pokemonId">#002</div>
         <ul class="desc grass">
             <li> Rarity
@@ -63,7 +63,7 @@
         </ul>
     </li>
     <li class="gallery grass"><p>Venusaur</p>
-    <img src='Pokemon/Venusaur.png'>
+    <img src='Pokemon/Venusaur.png' alt="">
     <div class="pokemonId">#003</div>
     <ul class="desc grass">
         <li>Rarity
@@ -75,7 +75,7 @@
     </ul>
     </li>
     <li class="gallery fire"><p>Charmander</p>
-    <img src='Pokemon/Charmander.png'>
+    <img src='Pokemon/Charmander.png' alt="">
     <div class="pokemonId">#004</div>
     <ul class="desc fire">
         <li>Rarity
@@ -88,7 +88,7 @@
     </li>
 
     <li class="gallery fire"><p>Charmeleon</p>
-        <img src='Pokemon/Charmeleon.png'>
+        <img src='Pokemon/Charmeleon.png' alt="">
         <div class="pokemonId">#005</div>
         <ul class="desc fire">
             <li>Rarity
@@ -101,7 +101,7 @@
     </li>
 
     <li class="gallery fire"><p>Charizard</p>
-        <img src='Pokemon/Charizard.png'>
+        <img src='Pokemon/Charizard.png' alt="">
         <div class="pokemonId">#006</div>
         <ul class="desc fire">
             <li>Rarity
@@ -114,7 +114,7 @@
     </li>
 
     <li class="gallery water"><p>Squirtle</p>
-        <img src='Pokemon/Squirtle.png'>
+        <img src='Pokemon/Squirtle.png' alt="">
         <div class="pokemonId">#007</div>
         <ul class="desc water">
             <li>Rarity
@@ -127,7 +127,7 @@
         </li>
 
     <li class="gallery water"><p>Wartortle</p>
-        <img src='Pokemon/Wartortle.png'>
+        <img src='Pokemon/Wartortle.png' alt="">
         <div class="pokemonId">#008</div>
         <ul class="desc water">
             <li>Rarity
@@ -140,7 +140,7 @@
         </li>
 
     <li class="gallery water"><p>Blastoise</p>
-        <img src='Pokemon/Blastoise.png'>
+        <img src='Pokemon/Blastoise.png' alt="">
         <div class="pokemonId">#009</div>
         <ul class="desc water">
             <li>Rarity
@@ -153,7 +153,7 @@
     </li>
     
     <li class="gallery bug"><p>Caterpie</p>
-        <img src='Pokemon/Caterpie.png'>
+        <img src='Pokemon/Caterpie.png' alt="">
         <div class="pokemonId">#010</div>
         <ul class="desc bug">
             <li>Rarity
@@ -166,7 +166,7 @@
     </li>
 
     <li class="gallery bug"><p>Metapod</p>
-        <img src='Pokemon/Metapod.png'>
+        <img src='Pokemon/Metapod.png' alt="">
         <div class="pokemonId">#011</div>
         <ul class="desc bug">
             <li>Rarity
@@ -179,7 +179,7 @@
     </li>
 
     <li class="gallery bug"><p>Butterfree</p>
-        <img src='Pokemon/Butterfree.png'>
+        <img src='Pokemon/Butterfree.png' alt="">
         <div class="pokemonId">#012</div>
         <ul class="desc bug">
             <li>Rarity
@@ -192,7 +192,7 @@
     </li>
 
     <li class="gallery bug"><p>Weedle</p>
-        <img src='Pokemon/Weedle.png'>
+        <img src='Pokemon/Weedle.png' alt="">
         <div class="pokemonId">#013</div>
         <ul class="desc bug">
             <li>Rarity
@@ -205,7 +205,7 @@
     </li>
 
     <li class="gallery bug"><p>Kakuna</p>
-        <img src='Pokemon/Kakuna.png'>
+        <img src='Pokemon/Kakuna.png' alt="">
         <div class="pokemonId">#014</div>
         <ul class="desc bug">
             <li>Rarity
@@ -218,7 +218,7 @@
     </li>
 
     <li class="gallery bug"><p>Beedrill</p>
-        <img src='Pokemon/Beedrill.png'>
+        <img src='Pokemon/Beedrill.png' alt="">
         <div class="pokemonId">#015</div>
         <ul class="desc bug">
             <li>Rarity
@@ -231,7 +231,7 @@
     </li>
 
     <li class="gallery normal"><p>Pidgey</p>
-        <img src='Pokemon/Pidgey.png'>
+        <img src='Pokemon/Pidgey.png' alt="">
         <div class="pokemonId">#016</div>
         <ul class="desc normal">
             <li>Rarity
@@ -244,7 +244,7 @@
     </li>
 
     <li class="gallery normal"><p>Pidgeotto</p>
-        <img src='Pokemon/Pidgeotto.png'>
+        <img src='Pokemon/Pidgeotto.png' alt="">
         <div class="pokemonId">#017</div>
         <ul class="desc normal">
             <li>Rarity
@@ -257,7 +257,7 @@
     </li>
 
     <li class="gallery normal"><p>Pidgeot</p>
-        <img src='Pokemon/Pidgeotto.png'>
+        <img src='Pokemon/Pidgeot.png' alt="">
         <div class="pokemonId">#018</div>
         <ul class="desc normal">
             <li>Rarity
@@ -270,7 +270,7 @@
     </li>
 
     <li class="gallery normal"><p>Rattata</p>
-        <img src='Pokemon/Rattata.png'>
+        <img src='Pokemon/Rattata.png' alt="">
         <div class="pokemonId">#019</div>
         <ul class="desc normal">
             <li>Rarity
@@ -283,7 +283,7 @@
     </li>
 
     <li class="gallery normal"><p>Raticate</p>
-        <img src='Pokemon/Raticate.png'>
+        <img src='Pokemon/Raticate.png' alt="">
         <div class="pokemonId">#020</div>
         <ul class="desc normal">
             <li>Rarity
@@ -301,7 +301,7 @@
     <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset?">Pokemon Pictures</a>
 </div> 
 
-<script type="text/javascript" src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
 
