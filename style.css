@@ -18,8 +18,9 @@ li.gallery {
     position: relative;
   }
 
-  
+
 li.newgallery {
+  font-family: Arial;
   display : none;
   border-radius: 25px;
   list-style-type: none;
@@ -31,12 +32,7 @@ li.newgallery {
   height: 325px;
   text-align: center;
   position: relative;
-  background-image: linear-gradient(lightsalmon, yellow)
-}
-.gallery1:hover {
-  cursor: pointer;
-  animation-name: bounce;
-  -moz-animation-name: bounce;
+  background-image: linear-gradient(lightsalmon, yellow) 
 }
 
   .grass{background-color: rgb(148, 238, 171);}
@@ -59,10 +55,12 @@ li.newgallery {
 
    
   .newimg {
-    width: 100%;
+    width: 90%;
     height: auto;
-  }
+    box-shadow: inset 10px 10px 50px black;
 
+    
+  }
 
   p{
       font-weight: bold;
@@ -85,7 +83,7 @@ li.newgallery {
     position: absolute;
     bottom: 10px;
     text-align: center;
-    font-size: 20px;
+    font-size: 2px;
     font-style: Arial;
     width: 99%;
     

@@ -415,7 +415,6 @@ pokemon = [
             li[i].style.display = "block";
           } 
           else {
-            console.log('not showing')
             li[i].style.display = "none";
           }
         }
@@ -435,13 +434,11 @@ pokemon = [
           a = li[i];
          
           txtValue = a.textContent || a.innerText;
-          //txtValue.toUpperCase().indexOf(filter) > 0
         
         if (txtValue.toUpperCase().indexOf(filter) > 0) {
             li[i].style.display = "block";
           } 
           else {
-            console.log('not showing')
             li[i].style.display = "none";
           }
         }
