@@ -434,8 +434,10 @@ pokemon = [
           a = li[i];
          
           txtValue = a.textContent || a.innerText;
-        
-        if (txtValue.toUpperCase().indexOf(filter) > 0) {
+          if (filter === ""){
+            li[i].style.display = "none";
+        }
+        else if (txtValue.toUpperCase().includes(filter)) {
             li[i].style.display = "block";
           } 
           else {
