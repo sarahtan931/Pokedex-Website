@@ -6,10 +6,8 @@ document.getElementById("searchBox").appendChild(div);
 let ul = document.createElement("ul");
 ul.setAttribute('id', 'myUL');
 
-
-//creating list element 
+//creating list elements 
 let li1 = document.createElement('li');
-let ul1 = document.createElement("ul");
 li1.setAttribute('class', 'newgallery');
 li1.setAttribute('id', 'li');
 let image1 = document.createElement('img');
@@ -27,7 +25,6 @@ li1.append(stats1);
 ul.appendChild(li1);
 
 let li2 = document.createElement('li');
-let ul2 = document.createElement("ul");
 li2.setAttribute('class', 'newgallery');
 li2.setAttribute('id', 'li');
 let image2 = document.createElement('img');
@@ -45,7 +42,6 @@ li2.append(stats2);
 ul.appendChild(li2);
 
 let li3 = document.createElement('li');
-let ul3 = document.createElement("ul");
 li3.setAttribute('class', 'newgallery');
 li3.setAttribute('id', 'li');
 let image3 = document.createElement('img');
@@ -63,7 +59,6 @@ li3.append(stats3);
 ul.appendChild(li3);
 
 let li4 = document.createElement('li');
-let ul4 = document.createElement("ul");
 li4.setAttribute('class', 'newgallery');
 li4.setAttribute('id', 'li');
 let image4 = document.createElement('img');
@@ -81,7 +76,6 @@ li4.append(stats4);
 ul.appendChild(li4);
 
 let li5 = document.createElement('li');
-let ul5 = document.createElement("ul");
 li5.setAttribute('class', 'newgallery');
 li5.setAttribute('id', 'li');
 let image5 = document.createElement('img');
@@ -99,7 +93,6 @@ li5.append(stats5);
 ul.appendChild(li5);
 
 let li6 = document.createElement('li');
-let ul6 = document.createElement("ul");
 li6.setAttribute('class', 'newgallery');
 li6.setAttribute('id', 'li');
 let image6 = document.createElement('img');
@@ -117,7 +110,6 @@ li6.append(stats6);
 ul.appendChild(li6);
 
 let li7 = document.createElement('li');
-let ul7 = document.createElement("ul");
 li7.setAttribute('class', 'newgallery');
 li7.setAttribute('id', 'li');
 let image7 = document.createElement('img');
@@ -135,7 +127,6 @@ li7.append(stats7);
 ul.appendChild(li7);
 
 let li8 = document.createElement('li');
-let ul8 = document.createElement("ul");
 li8.setAttribute('class', 'newgallery');
 li8.setAttribute('id', 'li');
 let image8 = document.createElement('img');
@@ -153,7 +144,6 @@ li8.append(stats8);
 ul.appendChild(li8);
 
 let li9 = document.createElement('li');
-let ul9 = document.createElement("ul");
 li9.setAttribute('class', 'newgallery');
 li9.setAttribute('id', 'li');
 let image9 = document.createElement('img');
@@ -171,7 +161,6 @@ li9.append(stats9);
 ul.appendChild(li9);
 
 let li10 = document.createElement('li');
-let ul10 = document.createElement("ul");
 li10.setAttribute('class', 'newgallery');
 li10.setAttribute('id', 'li');
 let image10 = document.createElement('img');
@@ -189,7 +178,6 @@ li10.append(stats10);
 ul.appendChild(li10);
 
 let li11 = document.createElement('li');
-let ul11 = document.createElement("ul");
 li11.setAttribute('class', 'newgallery');
 li11.setAttribute('id', 'li');
 let image11 = document.createElement('img');
@@ -207,7 +195,6 @@ li11.append(stats11);
 ul.appendChild(li11);
 
 let li12 = document.createElement('li');
-let ul12 = document.createElement("ul");
 li12.setAttribute('class', 'newgallery');
 li12.setAttribute('id', 'li');
 let image12 = document.createElement('img');
@@ -225,7 +212,6 @@ li12.append(stats12);
 ul.appendChild(li12);
 
 let li13 = document.createElement('li');
-let ul13 = document.createElement("ul");
 li13.setAttribute('class', 'newgallery');
 li13.setAttribute('id', 'li');
 let image13 = document.createElement('img');
@@ -243,7 +229,6 @@ li13.append(stats13);
 ul.appendChild(li13);
 
 let li14 = document.createElement('li');
-let ul14 = document.createElement("ul");
 li14.setAttribute('class', 'newgallery');
 li14.setAttribute('id', 'li');
 let image14 = document.createElement('img');
@@ -262,7 +247,6 @@ ul.appendChild(li14);
 
 
 let li15 = document.createElement('li');
-let ul15 = document.createElement("ul");
 li15.setAttribute('class', 'newgallery');
 li15.setAttribute('id', 'li');
 let image15 = document.createElement('img');
@@ -280,7 +264,6 @@ li15.append(stats15);
 ul.appendChild(li15);
 
 let li16 = document.createElement('li');
-let ul16 = document.createElement("ul");
 li16.setAttribute('class', 'newgallery');
 li16.setAttribute('id', 'li');
 let image16 = document.createElement('img');
@@ -298,7 +281,6 @@ li16.append(stats16);
 ul.appendChild(li16);
 
 let li17 = document.createElement('li');
-let ul17 = document.createElement("ul");
 li17.setAttribute('class', 'newgallery');
 li17.setAttribute('id', 'li');
 let image17 = document.createElement('img');
@@ -316,7 +298,6 @@ li17.append(stats17);
 ul.appendChild(li17);
 
 let li18 = document.createElement('li');
-let ul18 = document.createElement("ul");
 li18.setAttribute('class', 'newgallery');
 li18.setAttribute('id', 'li');
 let image18 = document.createElement('img');
@@ -334,7 +315,6 @@ li18.append(stats18);
 ul.appendChild(li18);
 
 let li19 = document.createElement('li');
-let ul19 = document.createElement("ul");
 li19.setAttribute('class', 'newgallery');
 li19.setAttribute('id', 'li');
 let image19 = document.createElement('img');
@@ -352,7 +332,6 @@ li19.append(stats19);
 ul.appendChild(li19);
 
 let li20 = document.createElement('li');
-let ul20 = document.createElement("ul");
 li20.setAttribute('class', 'newgallery');
 li20.setAttribute('id', 'li');
 let image20 = document.createElement('img');
