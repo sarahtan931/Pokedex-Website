@@ -34,7 +34,7 @@ let image2 = document.createElement('img');
 image2.src  = 'Pokemon/Ivysaur.png';
 image2.setAttribute('class', 'newimg');
 let p2 = document.createElement("P");
-let pokemon2 = document.createTextNode("Iveysaur");
+let pokemon2 = document.createTextNode("Ivysaur");
 let id2 = document.createTextNode("ID: 002");
 let stats2 = document.createTextNode("Ivysaur is grass type with a rarity of five and its fast move is razor leaf");
 p2.append(pokemon2);
@@ -373,7 +373,7 @@ div.appendChild(ul)
 
 pokemon = [
     {name: 'Bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle'},
-    {name: 'Iveysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf'},
+    {name: 'Ivysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf'},
     {name: 'Venusaur', id: 3, description:'Rarity: 6, Type: Grass, Fast Move: Rasor Leaf'},
     {name: 'Charmander', id: 4, description: 'Rarity: 4, Type: Fire, Fast Move: Ember'},
     {name: 'Charmeleon', id: 5, description: 'Rarity: 5, Type: Fire, Fast Move: Ember'},
@@ -395,7 +395,7 @@ pokemon = [
     
 
 
-    function filter() {
+    function filterName() {
         // Declare variables
         let input, filter, ul, li, txtValue;
         input = document.forms["nameForm"]["fName"];
