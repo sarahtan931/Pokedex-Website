@@ -8,26 +8,26 @@ let ul = document.createElement("ul");
 ul.setAttribute('id', 'myUL');
 
 pokemon = [
-    {name: 'Bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle' },
-    {name: 'Ivysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf'},
-    {name: 'Venusaur', id: 3, description:'Rarity: 6, Type: Grass, Fast Move: Rasor Leaf'},
-    {name: 'Charmander', id: 4, description: 'Rarity: 4, Type: Fire, Fast Move: Ember'},
-    {name: 'Charmeleon', id: 5, description: 'Rarity: 5, Type: Fire, Fast Move: Ember'},
-    {name: 'Charizard', id: 6, description:'Rarity: 6, Type: Fire, Fast Move: Fire Spin'},
-    {name: 'Squirtle', id: 7, description: 'Rarity: 4, Type: Water, Fast Move: Tackle'},
-    {name: 'Wartortle', id: 8, description:'Rarity: 4, Type: Water, Fast Move: Bite'},
-    {name: 'Blastoise', id: 9, description:'Rarity: 6, Type: Water, Fast Move: Bite'},
-    {name: 'Caterpie', id: 10, description: 'Rarity: 1, Type: Bug, Fast Move: Tackles'},
-    {name:'Metapod', id: 11, description: 'Rarity: 3, Type: Bug, Fast Move: Tackles'},
-    {name:'Buterfree', id: 12, description:'Rarity: 4, Type: Bug, Fast Move: Struggle Bug'},
-    {name:'Weedle', id:13, description:'Rarity: 1, Type: Bug, Fast Move: Bug bite'},
-    {name: 'Kakuna', id:14, description: 'Rarity: 3, Type: Bug, Fast Move: Bug Bite'},
-    {name: 'Beedrill', id:15, description: 'Rarity: 4, Type: Bug, Fast Move: Infestation'}, 
-    {name: 'Pidgey', id: 16, description: 'Rarity: 1, Type: Normal, Fast Move: Tackles'},
-    {name: 'Pidgeotto', id:17, description: 'Rarity: 3, Type: Normal, Fast Move: Wing Attack'},
-    {name: 'Pidgeot', id: 18, description: 'Rarity: 4, Type: Normal, Fast Move: Air Slash'},
-    {name:'Rattata', id: 19, description: 'Rarity: 1, Type: Normal, Fast Move: Tackle'},
-    {name: 'Raticate', id: 20, description: 'Rarity: 4, Type Normal, Fast Move: Bite'}]
+    {name: 'Bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle', pic:'Pokemon/Bulbasaur.png' },
+    {name: 'Ivysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf', pic:'Pokemon/Ivysaur.png'},
+    {name: 'Venusaur', id: 3, description:'Rarity: 6, Type: Grass, Fast Move: Rasor Leaf', pic:'Pokemon/Venusaur.png'},
+    {name: 'Charmander', id: 4, description: 'Rarity: 4, Type: Fire, Fast Move: Ember', pic:'Pokemon/Charmander.png'},
+    {name: 'Charmeleon', id: 5, description: 'Rarity: 5, Type: Fire, Fast Move: Ember', pic:'Pokemon/Charmeleon.png'},
+    {name: 'Charizard', id: 6, description:'Rarity: 6, Type: Fire, Fast Move: Fire Spin', pic:'Pokemon/Charizard.png'},
+    {name: 'Squirtle', id: 7, description: 'Rarity: 4, Type: Water, Fast Move: Tackle', pic:'Pokemon/Squirtle.png'},
+    {name: 'Wartortle', id: 8, description:'Rarity: 4, Type: Water, Fast Move: Bite', pic:'Pokemon/Wartortle.png'},
+    {name: 'Blastoise', id: 9, description:'Rarity: 6, Type: Water, Fast Move: Bite', pic:'Pokemon/Blastoise.png'},
+    {name: 'Caterpie', id: 10, description: 'Rarity: 1, Type: Bug, Fast Move: Tackles', pic:'Pokemon/Caterpie.png'},
+    {name:'Metapod', id: 11, description: 'Rarity: 3, Type: Bug, Fast Move: Tackles', pic:'Pokemon/Metapod.png'},
+    {name:'Buterfree', id: 12, description:'Rarity: 4, Type: Bug, Fast Move: Struggle Bug', pic:'Pokemon/Butterfree.png'},
+    {name:'Weedle', id:13, description:'Rarity: 1, Type: Bug, Fast Move: Bug bite', pic:'Pokemon/Weedle.png'},
+    {name: 'Kakuna', id:14, description: 'Rarity: 3, Type: Bug, Fast Move: Bug Bite', pic:'Pokemon/Kakuna.png'},
+    {name: 'Beedrill', id:15, description: 'Rarity: 4, Type: Bug, Fast Move: Infestation', pic:'Pokemon/Beedrill.png'}, 
+    {name: 'Pidgey', id: 16, description: 'Rarity: 1, Type: Normal, Fast Move: Tackles', pic:'Pokemon/Pidgey.png'},
+    {name: 'Pidgeotto', id:17, description: 'Rarity: 3, Type: Normal, Fast Move: Wing Attack', pic:'Pokemon/Pidgeotto.png'},
+    {name: 'Pidgeot', id: 18, description: 'Rarity: 4, Type: Normal, Fast Move: Air Slash', pic:'Pokemon/Pidgeot.png'},
+    {name:'Rattata', id: 19, description: 'Rarity: 1, Type: Normal, Fast Move: Tackle', pic:'Pokemon/Rattata.png'},
+    {name: 'Raticate', id: 20, description: 'Rarity: 4, Type Normal, Fast Move: Bite', pic:'Pokemon/Raticate.png'}]
     
 
     function filterName() {
@@ -39,41 +39,45 @@ pokemon = [
         // Loop through all list items, and hide those who don't match the search query
         let del = document.getElementById('resultBox');
 
+        //deleting the previous list if there is one
         while(del.firstChild){
         del.removeChild(del.firstChild);
         }
 
+        //looping through all pokemon to determine if there is a match
         for (i = 0; i < pokemon.length; i++) {
             a = pokemon[i].name;
-            
-    
+
+        //if there is no input dont output a list element
         if (filter === ""){
           let del = document.getElementById('resultBox');
           while(del.firstChild){
           del.removeChild(del.firstChild);
           }
         }
+        //if there is a matching pokemon dynamically create a list element with all of the pokemon info
          else if (a.toUpperCase().includes(filter)) {
-       
+            //creating a list element and setting class name
             li = document.createElement("li");
             li.setAttribute('class', 'newgaller');
-            li.setAttribute('id', li);
+            //creating paragraph element and img element
             p = document.createElement('P');
-           // img = document.createElement('img');
-           // img.src = pokemon[i].pic;
+            img = document.createElement('img');
+            img.src = pokemon[i].pic;
+            img.setAttribute('class', 'newimg');
+            //creating text elements 
             txt = document.createTextNode(pokemon[i].name);
             id = document.createTextNode('ID: ' + pokemon[i].id);
             desc = document.createTextNode(pokemon[i].description);
-            p.append(txt)
-            li.append(id);
-           // li.append(img);
-            li.append(p);
-            li.append(desc);
-            ul.append(li)
-            div.append(ul);
-           
+            //appending all text to elements 
+            p.appendChild(txt)
+            li.appendChild(id);
+            li.appendChild(img);
+            li.appendChild(p);
+            li.appendChild(desc);
+            ul.appendChild(li)
+            div.appendChild(ul);           
           } 
-         
         }
       }
 
@@ -86,39 +90,50 @@ pokemon = [
         ul = document.createElement('ul');
         ul.setAttribute('id', 'resultul');
         div.append(ul);
+        // Loop through all list items, and hide those who don't match the search query
         let del = document.getElementById('resultBox');
 
+        //deleting the previous list if there is one
         while(del.firstChild){
             del.removeChild(del.firstChild);
         }
 
-        // Loop through all list items, and hide those who don't match the search query
+         //if there is a matching pokemon dynamically create a list element with all of the pokemon info
         for (i = 0; i < pokemon.length; i++) {
           a = pokemon[i].toString();
          
-          txtValue = a.textContent || a.innerText;
+           //if there is no input dont output a list element
           if (filter === ""){
             let del = document.getElementById('resultBox');
             while(del.firstChild){
             del.removeChild(del.firstChild);
           }
-        
         }
+
+        //if there is a matching pokemon dynamically create a list element with all of the pokemon info
         else if (pokemon[i].id.toString().includes(filter.toString())) {
-          li = document.createElement("li");
-          li.setAttribute('class', 'newgaller');
-          li.setAttribute('id', li);
-          txt = document.createTextNode(pokemon[i].name);
-          id = document.createTextNode(pokemon[i].id);
-          desc = document.createTextNode(pokemon[i].description);
-          li.append(txt);
-          li.append(id);
-          li.append(desc);
-          ul.append(li)
-          div.append(ul);
-          
+             //creating a list element and setting class name
+            li = document.createElement("li");
+            li.setAttribute('class', 'newgaller');
+            //creating paragraph element and img element
+            li.setAttribute('id', li);
+            p = document.createElement('P');
+            img = document.createElement('img');
+            img.src = pokemon[i].pic;
+            img.setAttribute('class', 'newimg');
+             //creating text elements 
+            txt = document.createTextNode(pokemon[i].name);
+            id = document.createTextNode('ID: ' + pokemon[i].id);
+            desc = document.createTextNode(pokemon[i].description);
+            //appending all text to elements 
+            p.append(txt)
+            li.append(id);
+            li.append(img);
+            li.append(p);
+            li.append(desc);
+            ul.append(li)
+            div.append(ul);
           } 
-         
         }
       }
 
