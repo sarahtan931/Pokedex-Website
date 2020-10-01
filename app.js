@@ -32,7 +32,7 @@ pokemon = [
 
     function filterName() {
         // Declare variables
-        let input, filter, ul, li, txtValue;
+        let input, filter, ul;
         input = document.forms["nameForm"]["fName"];
         filter = input.value.toUpperCase();
         ul = document.createElement('ul');
@@ -46,30 +46,28 @@ pokemon = [
 
         //looping through all pokemon to determine if there is a match
         for (i = 0; i < pokemon.length; i++) {
-            a = pokemon[i].name;
 
         //if there is no input dont output a list element
         if (filter === ""){
-          let del = document.getElementById('resultBox');
           while(del.firstChild){
           del.removeChild(del.firstChild);
           }
         }
         //if there is a matching pokemon dynamically create a list element with all of the pokemon info
-         else if (a.toUpperCase().includes(filter)) {
+         else if (pokemon[i].name.toUpperCase().includes(filter)) {
             //creating a list element and setting class name
-            li = document.createElement("li");
+            let li = document.createElement("li");
             li.setAttribute('class', 'newgaller');
             //creating paragraph element and img element
-            p = document.createElement('P');
-            idp = document.createElement('P')
-            img = document.createElement('img');
+            let p = document.createElement('P');
+            let idp = document.createElement('P')
+            let img = document.createElement('img');
             img.src = pokemon[i].pic;
             img.setAttribute('class', 'newimg');
             //creating text elements 
-            txt = document.createTextNode(pokemon[i].name);
-            id = document.createTextNode('ID: ' + pokemon[i].id);
-            desc = document.createTextNode(pokemon[i].description);
+            let txt = document.createTextNode(pokemon[i].name);
+            let id = document.createTextNode('ID: ' + pokemon[i].id);
+            let desc = document.createTextNode(pokemon[i].description);
             //appending all text to elements 
             p.appendChild(txt)
             idp.appendChild(id)
@@ -86,7 +84,7 @@ pokemon = [
        
     function filterNum() {
         // Declare variables
-        let input, filter, ul, li, txtValue;
+        let input, filter, ul;
         input = document.forms["numForm"]["fNum"];
         filter = input.value.toUpperCase();
         ul = document.createElement('ul');
@@ -102,11 +100,9 @@ pokemon = [
 
          //if there is a matching pokemon dynamically create a list element with all of the pokemon info
         for (i = 0; i < pokemon.length; i++) {
-          a = pokemon[i].toString();
-         
+          
            //if there is no input dont output a list element
           if (filter === ""){
-            let del = document.getElementById('resultBox');
             while(del.firstChild){
             del.removeChild(del.firstChild);
           }
@@ -115,19 +111,19 @@ pokemon = [
         //if there is a matching pokemon dynamically create a list element with all of the pokemon info
         else if (pokemon[i].id.toString().includes(filter.toString())) {
              //creating a list element and setting class name
-            li = document.createElement("li");
+            let li = document.createElement("li");
             li.setAttribute('class', 'newgaller');
             //creating paragraph element and img element
             li.setAttribute('id', li);
-            p = document.createElement('P');
-            idp = document.createElement("P");
-            img = document.createElement('img');
+            let p = document.createElement('P');
+            let idp = document.createElement("P");
+            let img = document.createElement('img');
             img.src = pokemon[i].pic;
             img.setAttribute('class', 'newimg');
              //creating text elements 
-            txt = document.createTextNode(pokemon[i].name);
-            id = document.createTextNode('ID: ' + pokemon[i].id);
-            desc = document.createTextNode(pokemon[i].description);
+            let txt = document.createTextNode(pokemon[i].name);
+            let id = document.createTextNode('ID: ' + pokemon[i].id);
+            let desc = document.createTextNode(pokemon[i].description);
             //appending all text to elements 
             p.appendChild(txt);
             idp.appendChild(id);
