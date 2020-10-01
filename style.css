@@ -19,9 +19,8 @@ li.gallery {
   }
 
 
-li.newgallery {
+li.newgaller {
   font-family: Arial;
-  display : none;
   border-radius: 25px;
   list-style-type: none;
   margin: 7px;
