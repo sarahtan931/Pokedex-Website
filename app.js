@@ -9,7 +9,7 @@ ul.setAttribute('id', 'myUL');
 
 pokemon = [
     {name: 'Bulbasaur', id: 1, description: 'Rarity: 4, Type: Grass, Fast Move: Tackle', pic:'Pokemon/Bulbasaur.png' },
-    {name: 'Ivysaur', id: 2, description:'Rarity:5, Type: Grass, Fast Move: Rasor Leaf', pic:'Pokemon/Ivysaur.png'},
+    {name: 'Ivysaur', id: 2, description:'Rarity: 5, Type: Grass, Fast Move: Rasor Leaf', pic:'Pokemon/Ivysaur.png'},
     {name: 'Venusaur', id: 3, description:'Rarity: 6, Type: Grass, Fast Move: Rasor Leaf', pic:'Pokemon/Venusaur.png'},
     {name: 'Charmander', id: 4, description: 'Rarity: 4, Type: Fire, Fast Move: Ember', pic:'Pokemon/Charmander.png'},
     {name: 'Charmeleon', id: 5, description: 'Rarity: 5, Type: Fire, Fast Move: Ember', pic:'Pokemon/Charmeleon.png'},
@@ -62,6 +62,7 @@ pokemon = [
             li.setAttribute('class', 'newgaller');
             //creating paragraph element and img element
             p = document.createElement('P');
+            idp = document.createElement('P')
             img = document.createElement('img');
             img.src = pokemon[i].pic;
             img.setAttribute('class', 'newimg');
@@ -71,7 +72,8 @@ pokemon = [
             desc = document.createTextNode(pokemon[i].description);
             //appending all text to elements 
             p.appendChild(txt)
-            li.appendChild(id);
+            idp.appendChild(id)
+            li.appendChild(idp);
             li.appendChild(img);
             li.appendChild(p);
             li.appendChild(desc);
@@ -118,6 +120,7 @@ pokemon = [
             //creating paragraph element and img element
             li.setAttribute('id', li);
             p = document.createElement('P');
+            idp = document.createElement("P");
             img = document.createElement('img');
             img.src = pokemon[i].pic;
             img.setAttribute('class', 'newimg');
@@ -126,13 +129,14 @@ pokemon = [
             id = document.createTextNode('ID: ' + pokemon[i].id);
             desc = document.createTextNode(pokemon[i].description);
             //appending all text to elements 
-            p.append(txt)
-            li.append(id);
-            li.append(img);
-            li.append(p);
-            li.append(desc);
-            ul.append(li)
-            div.append(ul);
+            p.appendChild(txt);
+            idp.appendChild(id);
+            li.appendChild(idp);
+            li.appendChild(img);
+            li.appendChild(p);
+            li.appendChild(desc);
+            ul.appendChild(li)
+            div.appendChild(ul);
           } 
         }
       }
